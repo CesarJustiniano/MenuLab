@@ -53,6 +53,17 @@ public class DMComponent {
 
 	}
 	
+	public void removeList(String name){
+		int index = getIndexForList(name);
+		if(index == -1){
+			IOComponent.getComponent().output("No such list, " + name + ", exists.\n"); 
+		}
+		else{
+			lol.get(index).clear();
+			lol.remove(index);
+		}
+	}
+	
 	/**
 	 * Removes element from a particular list. 
 	 * @param name the name of the list
@@ -221,4 +232,6 @@ public class DMComponent {
 			return name; 
 		}
 	}
+	
+	
 }
